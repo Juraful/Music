@@ -1,10 +1,8 @@
-http.get("https://api.github.com/repos/Juraful/Music/contents/", function(body)
-    List = {}
-    for _, f in ipairs(json.decode(body)) do
-        if f.name:lower():match("%.mp3$") then
-            table.insert(List, f.name)
-        end
-    end
-    if #List == 0 then return end
-    playSong(Shuffle and math.random(#List) or 1)
-end)
+[
+  "ALL THE TIME.mp3",
+  "femtanyl - ATTACKING VERTICAL 0.mp3",
+  "femtanyl - GIRL HELL 1999 4.mp3",
+  "femtanyl - KATAMARI 0.mp3",
+  "femtanyl - M3 n MIN3 feat. Danny Brown 0.mp3",
+  "femtanyl - WORLDWID3 feat. zombAe 0.mp3"
+]
