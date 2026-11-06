@@ -1,0 +1,10 @@
+http.get("https://api.github.com/repos/Juraful/Music/contents/", function(body)
+    List = {}
+    for _, f in ipairs(json.decode(body)) do
+        if f.name:lower():match("%.mp3$") then
+            table.insert(List, f.name)
+        end
+    end
+    if #List == 0 then return end
+    playSong(Shuffle and math.random(#List) or 1)
+end)
